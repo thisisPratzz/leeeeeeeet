@@ -6,16 +6,9 @@ var groupAnagrams = function(strs) {
     
     const hashMap ={}
     
-    // console.log("testcase",strs.length)
     for (let i=0;i<strs.length;i++){
-//         curr = strs[i];
-//         for(j=0;j<curr.length;i++){
-            
-            
-//         }
-        // const obj =  keyvalue(strs[i])
+
         const StringfiyedObj =keyvalue(strs[i])
-        // console.log(StringfiyedObj)
         if(hashMap[StringfiyedObj]){
             hashMap[StringfiyedObj].push(strs[i])
         }else {
@@ -61,12 +54,11 @@ var groupAnagrams = function(strs) {
         for (let i=0;i<s.length;i++){
                     sObj[s[i]] +=1
         }
-        // console.log(JSON.stringify(sObj))
         return JSON.stringify(sObj)
     }
-    const arr =[]
-    for (key in hashMap){
-        arr.push(hashMap[key])
-    }
-    return arr
+    // const arr =[]
+    // for (key in hashMap){
+    //     arr.push(hashMap[key])
+    // }
+    return Object.values(hashMap)
 };
